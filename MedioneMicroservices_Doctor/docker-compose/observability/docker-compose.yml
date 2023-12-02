@@ -257,6 +257,7 @@ services:
       SPRING_RABBITMQ_HOST: rabbit
       SPRING_RABBITMQ_PORT: 5672
       OTEL_SERVICE_NAME: "configserver"
+      SPRING_APPLICATION_NAME: "configserver"
     ports:
       - "9091:9091"
     extends:
@@ -276,6 +277,7 @@ services:
       - "8095:8095"
     environment:
       OTEL_SERVICE_NAME: "gatewayserver"
+      SPRING_APPLICATION_NAME: "gatewayserver"
     extends:
       file: common-config.yml
       service: microservice-configserver-eureka-dependant-config
@@ -292,6 +294,7 @@ services:
       start_period: 5s
     environment:
       OTEL_SERVICE_NAME: "eurekaserver"
+      SPRING_APPLICATION_NAME: "eurekaserver"
     extends:
       file: common-config.yml
       service: microservice-configserver-dependant-config
@@ -308,6 +311,7 @@ services:
       start_period: 60s
     environment:
       OTEL_SERVICE_NAME: "mmpatient"
+      SPRING_APPLICATION_NAME: "mmpatient"
     extends:
       file: common-config.yml
       service: microservice-full-backing-dependant-config
@@ -324,6 +328,7 @@ services:
       start_period: 60s
     environment:
       OTEL_SERVICE_NAME: "mmdoctor"
+      SPRING_APPLICATION_NAME: "mmdoctor"
     extends:
       file: common-config.yml
       service: microservice-full-backing-dependant-config
@@ -340,6 +345,7 @@ services:
       start_period: 60s
     environment:
       OTEL_SERVICE_NAME: "mmvisits"
+      SPRING_APPLICATION_NAME: "mmvisits"
     extends:
       file: common-config.yml
       service: microservice-full-backing-dependant-config

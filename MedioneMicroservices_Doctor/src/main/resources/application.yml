@@ -4,8 +4,7 @@ endpoints:
 logging:
     level:
         com:
-            example:
-                medionemicroservices_doctor: DEBUG
+            example: DEBUG
     pattern:
         level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
 eureka:
