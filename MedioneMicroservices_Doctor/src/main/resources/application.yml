@@ -1,0 +1,87 @@
+endpoints:
+    shutdown:
+        enabled: true
+logging:
+    level:
+        com:
+            example: DEBUG
+    pattern:
+        level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
+eureka:
+    client:
+        fetchRegistry: true
+        registerWithEureka: true
+        serviceUrl:
+            defaultZone: http://localhost:9111/eureka/
+    instance:
+        preferIpAddress: 'true '
+info:
+    app:
+        description: Medione Doctor Application
+        name: Doctor Microservice
+        version: 1.0.0
+management:
+    endpoint:
+        shutdown:
+            enabled: true
+        health:
+            probes:
+                enabled: true
+    endpoints:
+        web:
+            exposure:
+                include: '*'
+    info:
+        env:
+            enabled: true
+    health:
+        livenessstate:
+            enabled: true
+        readinessstate:
+            enabled: true
+    metrics:
+        tags:
+            application: ${spring.application.name}
+server:
+    port: 8081
+spring:
+    application:
+        name: mmdoctor
+    cache:
+        type: NONE
+    config:
+        import: optional:configserver:http://localhost:9091
+    datasource:
+        password: root
+        url: jdbc:mysql://127.0.0.10:3306/medione?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=Europe/Moscow&useLegacyDatetimeCode=false
+        username: root
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLDialect
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                jdbc:
+                    time_zone: Europe/Moscow
+        show-sql: true
+    profiles:
+        active: prod
+    rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+    cloud:
+        openfeign:
+            circuitbreaker:
+                enabled: true
+security:
+    basic:
+        enable: false
+resilience4j.circuitbreaker:
+    configs:
+        default:
+            slidingWindowSize: 10
+            permittedNumberOfCallsInHalfOpenState: 10
+            waitDurationInOpenState: 10000
+            failureRateThreshold: 50

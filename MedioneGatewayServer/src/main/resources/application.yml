@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: gatewayserver
+  config:
+    import: optional:configserver:http://localhost:9091
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 2s
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    gateway:
+      enabled: true
+  info:
+    env:
+      enabled: true
+    app:
+      description: Medione Gateway Server Application
+      name: Medione GW
+      version: 1.0.0
+  metrics:
+    tags:
+      application: ${spring.application.name}
+logging:
+  level:
+    com:
+      medione:
+        gateway: DEBUG
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 10
+      waitDurationInOpenState: 10000
+      failureRateThreshold: 50

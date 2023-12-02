@@ -1,0 +1,17 @@
+!/MedioneMictoservices_Patient/.idea/
+!/MedioneMicroservices_Visits/.idea/
+!/MedioneMicroservices_Doctor/.idea/
+!/MedioneGatewayServer/.idea/
+!/MedioneEurekaServer/.idea/
+!/MedioneConfigServer/.idea/
+!/.idea/
+!/MedioneMictoservices_Patient/target/
+!/MedioneMicroservices_Visits/target/
+!/MedioneMicroservices_Doctor/target/
+!/MedioneGatewayServer/target/
+!/MedioneEurekaServer/target/
+!/MedioneConfigServer/target/
+/MedioneMicroservices_Doctor/docker-compose/observability/.data/minio/.minio.sys/tmp/
+/MedioneMicroservices_Doctor/docker-compose/observability/.data/minio/.minio.sys/buckets/
+/MedioneMicroservices_Doctor/docker-compose/observability/.data/minio/loki-data/index/
+/MedioneMicroservices_Doctor/docker-compose/observability/.data/minio/loki-data/tenant1/
