@@ -22,6 +22,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +42,7 @@ import java.util.List;
         description = "REST API in Medione to UPDATE, FETCH AND DELETE doctor and their details"
 )
 public class DoctorContoller {
+    public static final Logger LOGGER = LoggerFactory.getLogger(DoctorContoller.class);
 
     private MmDoctorConfig config;
     private IDoctorService doctorService;
@@ -56,6 +59,7 @@ public class DoctorContoller {
     @GetMapping("/fetch")
     public ResponseEntity<DoctorDto> fetchDoctor(@Pattern(regexp = "^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$")
                                                  @RequestParam String phone){
+        LOGGER.debug("Fetch doctor started");
         DoctorDto doctorDto = doctorService.fetchDoctorByPhone(phone);
         return ResponseEntity
                 .status(HttpStatus.FOUND)

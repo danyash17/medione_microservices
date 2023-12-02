@@ -11,3 +11,7 @@
 !/MedioneGatewayServer/target/
 !/MedioneEurekaServer/target/
 !/MedioneConfigServer/target/
+/MedioneMicroservices_Doctor/docker-compose/observability/.data/minio/.minio.sys/tmp/
+/MedioneMicroservices_Doctor/docker-compose/observability/.data/minio/.minio.sys/buckets/
+/MedioneMicroservices_Doctor/docker-compose/observability/.data/minio/loki-data/index/
+/MedioneMicroservices_Doctor/docker-compose/observability/.data/minio/loki-data/tenant1/

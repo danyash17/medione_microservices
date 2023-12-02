@@ -44,6 +44,19 @@ services:
       file: common-config.yml
       service: network-deploy-service
 
+  tempo:
+    image: grafana/tempo
+    container_name: tempo
+    command: -config.file /etc/tempo-config.yml
+    ports:
+      - "3110:3100"
+      - "4317:4317"
+    volumes:
+      - ./tempo/tempo.yml:/etc/tempo-config.yml
+    extends:
+      file: common-config.yml
+      service: network-deploy-service
+
   promtail:
     image: grafana/promtail:2.9.2
     volumes:
@@ -243,6 +256,7 @@ services:
     environment:
       SPRING_RABBITMQ_HOST: rabbit
       SPRING_RABBITMQ_PORT: 5672
+      OTEL_SERVICE_NAME: "configserver"
     ports:
       - "9091:9091"
     extends:
@@ -260,6 +274,8 @@ services:
         condition: service_healthy
     ports:
       - "8095:8095"
+    environment:
+      OTEL_SERVICE_NAME: "gatewayserver"
     extends:
       file: common-config.yml
       service: microservice-configserver-eureka-dependant-config
@@ -275,7 +291,7 @@ services:
       retries: 10
       start_period: 5s
     environment:
-      SPRING_APPLICATION_NAME: eurekaserver
+      OTEL_SERVICE_NAME: "eurekaserver"
     extends:
       file: common-config.yml
       service: microservice-configserver-dependant-config
@@ -291,7 +307,7 @@ services:
       retries: 15
       start_period: 60s
     environment:
-      SPRING_APPLICATION_NAME: mmpatient
+      OTEL_SERVICE_NAME: "mmpatient"
     extends:
       file: common-config.yml
       service: microservice-full-backing-dependant-config
@@ -307,7 +323,7 @@ services:
       retries: 15
       start_period: 60s
     environment:
-      SPRING_APPLICATION_NAME: mmdoctor
+      OTEL_SERVICE_NAME: "mmdoctor"
     extends:
       file: common-config.yml
       service: microservice-full-backing-dependant-config
@@ -323,7 +339,7 @@ services:
       retries: 15
       start_period: 60s
     environment:
-      SPRING_APPLICATION_NAME: mmvisits
+      OTEL_SERVICE_NAME: "mmvisits"
     extends:
       file: common-config.yml
       service: microservice-full-backing-dependant-config
