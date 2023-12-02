@@ -1,0 +1,13 @@
+!/MedioneMictoservices_Patient/.idea/
+!/MedioneMicroservices_Visits/.idea/
+!/MedioneMicroservices_Doctor/.idea/
+!/MedioneGatewayServer/.idea/
+!/MedioneEurekaServer/.idea/
+!/MedioneConfigServer/.idea/
+!/.idea/
+!/MedioneMictoservices_Patient/target/
+!/MedioneMicroservices_Visits/target/
+!/MedioneMicroservices_Doctor/target/
+!/MedioneGatewayServer/target/
+!/MedioneEurekaServer/target/
+!/MedioneConfigServer/target/
