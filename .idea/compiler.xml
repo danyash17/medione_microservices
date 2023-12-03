@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="MedioneConfigServer" />
+        <module name="MedioneMicroservices_Visits" />
+        <module name="MedioneMictoservices_Patient" />
+        <module name="MedioneMicroservices_Doctor" />
+        <module name="MedioneEurekaServer" />
+        <module name="MedioneGatewayServer" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="MedioneConfigServer" options="-parameters" />
+      <module name="MedioneEurekaServer" options="-parameters" />
+      <module name="MedioneGatewayServer" options="-parameters" />
+      <module name="MedioneMicroservices_Doctor" options="-parameters" />
+      <module name="MedioneMicroservices_Visits" options="-parameters" />
+      <module name="MedioneMictoservices_Patient" options="-parameters" />
+    </option>
+  </component>
+</project>

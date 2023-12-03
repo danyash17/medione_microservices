@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  doctor:
+    image: danyashes/mmdoctor:latest
+    mem_limit: 700m
+    ports:
+      - "9001:8081"
+    networks:
+      - danyashes-hospital-network
+    
+  patient:
+    image: danyashes/mmpatient:latest
+    mem_limit: 700m
+    ports:
+      - "9002:8082"
+    networks:
+      - danyashes-hospital-network
+    
+  visits:
+    image: danyashes/mmvisits:latest
+    mem_limit: 700m
+    ports:
+      - "9003:8083"
+    networks:
+      - danyashes-hospital-network
+    
+networks:
+  danyashes-hospital-network:
