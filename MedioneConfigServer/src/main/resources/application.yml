@@ -14,11 +14,6 @@ spring:
                     uri: https://github.com/danyash17/microservices-learning-config.git
     profiles:
         active: git
-    rabbitmq:
-        host: localhost
-        port: 5672
-        username: guest
-        password: guest
 management:
   endpoint:
     shutdown:
