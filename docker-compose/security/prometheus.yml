@@ -1,0 +1,29 @@
+global:
+  scrape_interval: 5s
+  evaluation_interval: 5s
+
+scrape_configs:
+  - job_name: 'mmdoctor'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: ['mmdoctor:8081']
+  - job_name: 'mmvisits'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: [ 'mmvisits:8083' ]
+  - job_name: 'mmpatient'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: [ 'mmpatient:8082' ]
+  - job_name: 'eurekaserver'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: [ 'eurekaserver:9111' ]
+  - job_name: 'gatewayserver'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: [ 'gatewayserver:8095' ]
+  - job_name: 'configserver'
+    metrics_path: '/actuator/prometheus'
+    static_configs:
+      - targets: [ 'configserver:9091' ]
