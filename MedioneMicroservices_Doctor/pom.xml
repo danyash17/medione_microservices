@@ -24,11 +24,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <dependency>
-            <groupId>io.opentelemetry.javaagent</groupId>
-            <artifactId>opentelemetry-javaagent</artifactId>
-            <version>${otelVersion}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.opentelemetry.javaagent</groupId>-->
+<!--            <artifactId>opentelemetry-javaagent</artifactId>-->
+<!--            <version>${otelVersion}</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
