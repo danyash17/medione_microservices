@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: medione-configmap
+data:
+  SPRING_PROFILES_ACTIVE: prod
+  SPRING_CONFIG_IMPORT: "configserver:http://configserver:9091/"
+  SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/medione
+  EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: "http://eurekaserver:9111/eureka/"
+  CONFIGSERVER_APPLICATION_NAME: configserver
+  EUREKA_APPLICATION_NAME: eurekaserver
+  MMDOCTOR_APPLICATION_NAME: mmdoctor
+  MMPATIENT_APPLICATION_NAME: mmpatient
+  MMVISITS_APPLICATION_NAME: mmvisits
+  GATEWAY_APPLICATION_NAME: gatewayserver
+  KEYCLOAK_ADMIN: admin
+  KEYCLOAK_ADMIN_PASSWORD: admin
+  SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: "http://keycloak:7080/realms/master/protocol/openid-connect/certs"
+  MYSQL_DATABASE: "medione"

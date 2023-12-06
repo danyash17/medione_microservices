@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mmpatient-deployment
+  labels:
+    app: mmpatient
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mmpatient
+  template:
+    metadata:
+      labels:
+        app: mmpatient
+    spec:
+      containers:
+      - name: mmpatient
+        image: danyashes/mmpatient:security
+        ports:
+        - containerPort: 8082
+        env:
+        - name: SPRING_APPLICATION_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: medione-configmap
+              key: MMPATIENT_APPLICATION_NAME
+        - name: SPRING_DATASOURCE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: medione-configmap
+              key: SPRING_DATASOURCE_URL
+        - name: SPRING_PROFILES_ACTIVE
+          valueFrom: 
+            configMapKeyRef:
+              name: medione-configmap
+              key: SPRING_PROFILES_ACTIVE
+        - name: SPRING_CONFIG_IMPORT
+          valueFrom: 
+            configMapKeyRef:
+              name: medione-configmap
+              key: SPRING_CONFIG_IMPORT
+        - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+          valueFrom: 
+            configMapKeyRef:
+              name: medione-configmap
+              key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mmpatient
+spec:
+  selector:
+    app: mmpatient
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
