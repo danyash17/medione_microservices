@@ -12,11 +12,11 @@
         <module name="MedioneMicroservices_Message" />
         <module name="MedioneMicroservices_Visits" />
         <module name="MedioneMicroservices_Doctor" />
-        <module name="MedioneEurekaServer" />
         <module name="MedioneGatewayServer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="MedioneEurekaServer" target="17" />
       <module name="message" target="17" />
     </bytecodeTargetLevel>
   </component>

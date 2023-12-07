@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/MedioneConfigServer/MedioneConfigServer.iml" filepath="$PROJECT_DIR$/MedioneConfigServer/MedioneConfigServer.iml" />
-      <module fileurl="file://$PROJECT_DIR$/MedioneEurekaServer/MedioneEurekaServer.iml" filepath="$PROJECT_DIR$/MedioneEurekaServer/MedioneEurekaServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/MedioneGatewayServer/MedioneGatewayServer.iml" filepath="$PROJECT_DIR$/MedioneGatewayServer/MedioneGatewayServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/MedioneMicroservices_Doctor/MedioneMicroservices_Doctor.iml" filepath="$PROJECT_DIR$/MedioneMicroservices_Doctor/MedioneMicroservices_Doctor.iml" />
       <module fileurl="file://$PROJECT_DIR$/MedioneMicroservices_Visits/MedioneMicroservices_Visits.iml" filepath="$PROJECT_DIR$/MedioneMicroservices_Visits/MedioneMicroservices_Visits.iml" />
