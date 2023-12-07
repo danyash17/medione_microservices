@@ -5,17 +5,17 @@ spring:
     import: optional:configserver:http://localhost:9091
   cloud:
     gateway:
-      kubernetes:
-        discovery:
-          enabled: true
-          all-namespaces: true
-      discovery:
-        client:
-          health-indicator:
-            enabled: false
       httpclient:
         connect-timeout: 1000
-        response-timeout: 2s
+        response-timeout: 10s
+    kubernetes:
+      discovery:
+        enabled: true
+        all-namespaces: true
+    discovery:
+      client:
+        health-indicator:
+          enabled: false
   security:
     oauth2:
       resourceserver:
