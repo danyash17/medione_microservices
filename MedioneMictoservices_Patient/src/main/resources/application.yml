@@ -53,6 +53,11 @@ spring:
     profiles:
         active: prod
     cloud:
+        gateway:
+            discovery:
+                client:
+                    health-indicator:
+                        enabled: false
         kubernetes:
             discovery:
                 all-namespaces: true
