@@ -21,11 +21,6 @@ spec:
         ports:
         - containerPort: {{ .Values.containerPort }}
           protocol: TCP
-        {{- if .Values.is_mysqldb }}
-        volumeMounts:
-        - name: mysql-persistent-storage
-          mountPath: /var/lib/mysql  
-        {{- end }}
         env:
         {{- if .Values.is_mysqldb }}
         - name: MYSQL_ROOT_PASSWORD
@@ -85,9 +80,4 @@ spec:
               name: {{ .Values.global.configMapName }}
               key: SPRING_DATASOURCE_URL
         {{- end }}
-      {{- if .Values.is_mysqldb }}
-      volumeMounts:
-        - name: mysql-persistent-storage
-          mountPath: /var/lib/mysql  
-      {{- end }}  
 {{- end -}}
