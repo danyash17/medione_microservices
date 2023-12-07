@@ -10,7 +10,7 @@ replicaCount: 1
 
 image:
   repository: danyashes/gatewayserver
-  tag: kafka-stable
+  tag: k8s-service-disc
 
 containerPort: 8095
 
