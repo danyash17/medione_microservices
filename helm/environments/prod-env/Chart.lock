@@ -1,0 +1,30 @@
+dependencies:
+- name: medione-common
+  repository: file://../../medione-common
+  version: 0.1.0
+- name: configserver
+  repository: file://../../medione-services/configserver
+  version: 0.1.0
+- name: eurekaserver
+  repository: file://../../medione-services/eurekaserver
+  version: 0.1.0
+- name: mmdoctor
+  repository: file://../../medione-services/mmdoctor
+  version: 0.1.0
+- name: mmpatient
+  repository: file://../../medione-services/mmpatient
+  version: 0.1.0
+- name: mmvisits
+  repository: file://../../medione-services/mmvisits
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../medione-services/gatewayserver
+  version: 0.1.0
+- name: mmmessage
+  repository: file://../../medione-services/mmmessage
+  version: 0.1.0
+- name: mysql
+  repository: file://../../mysql
+  version: 0.1.0
+digest: sha256:cf83699c9b569c67bd785c2689a1cd1ed84bcc641659bc0534dfae3488d0e6ad
+generated: "2023-12-06T16:05:57.890975813+03:00"

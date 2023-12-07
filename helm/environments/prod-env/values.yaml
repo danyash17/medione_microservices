@@ -1,0 +1,9 @@
+global:
+  configMapName: medioneprod-configmap
+  activeProfile: prod
+  configServerURL: configserver:http://configserver:9091/
+  eurekaServerURL: http://eurekaserver:9111/eureka/
+  keyCloakURL: http://keycloak.default.svc.cluster.local:80/realms/master/protocol/openid-connect/certs
+  kafkaBrokerURL: kafka-controller-0.kafka-controller-headless.default.svc.cluster.local:9092
+  springDatasource: jdbc:mysql://mysql:3306/medione
+  mysqldb: medione
