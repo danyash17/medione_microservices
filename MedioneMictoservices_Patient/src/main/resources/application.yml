@@ -1,14 +1,6 @@
 endpoints:
     shutdown:
         enabled: true
-eureka:
-    client:
-        fetchRegistry: true
-        registerWithEureka: true
-        serviceUrl:
-            defaultZone: http://localhost:9111/eureka/
-    instance:
-        preferIpAddress: 'true '
 info:
     app:
         description: Medione Patient Application
@@ -60,6 +52,10 @@ spring:
         show-sql: true
     profiles:
         active: prod
+    cloud:
+        kubernetes:
+            discovery:
+                all-namespaces: true
 resilience4j.retry:
     configs:
         default:
