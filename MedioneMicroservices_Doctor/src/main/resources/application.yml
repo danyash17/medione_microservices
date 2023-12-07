@@ -7,14 +7,6 @@ logging:
             example: DEBUG
     pattern:
         level: "%5p [${spring.application.name},%X{trace_id},%X{span_id}]"
-eureka:
-    client:
-        fetchRegistry: true
-        registerWithEureka: true
-        serviceUrl:
-            defaultZone: http://localhost:9111/eureka/
-    instance:
-        preferIpAddress: 'true '
 info:
     app:
         description: Medione Doctor Application
@@ -67,6 +59,9 @@ spring:
     profiles:
         active: prod
     cloud:
+        kubernetes:
+            discovery:
+                all-namespaces: true
         openfeign:
             circuitbreaker:
                 enabled: true

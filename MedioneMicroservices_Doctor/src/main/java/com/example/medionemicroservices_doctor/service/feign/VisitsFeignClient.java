@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
-@FeignClient(name = "mmvisits", fallback = VisitsFallback.class)
+@FeignClient(name = "mmvisits", url = "http://mmvisits:8083", fallback = VisitsFallback.class)
 public interface VisitsFeignClient {
 
     @GetMapping("/medioneapi/visits/active/doctor")
