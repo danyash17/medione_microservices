@@ -10,4 +10,5 @@ data:
   SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_JWK-SET-URI: {{ .Values.global.keyCloakURL }}
   SPRING_CLOUD_STREAM_KAFKA_BINDER_BROKERS: {{ .Values.global.kafkaBrokerURL }}
   MYSQL_DATABASE: {{ .Values.global.mysqldb }}
+  SPRING_DATASOURCE_URL: {{ .Values.global.springDatasource }}
 {{- end -}}
