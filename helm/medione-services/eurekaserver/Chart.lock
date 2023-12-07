@@ -1,6 +1,0 @@
-dependencies:
-- name: medione-common
-  repository: file://../../medione-common
-  version: 0.1.0
-digest: sha256:be5bbb57662f3779a88b18c90475da9ece2991be89e85bc62e78eecbdb5a22ef
-generated: "2023-12-06T14:18:09.134913772+03:00"
