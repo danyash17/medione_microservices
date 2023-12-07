@@ -60,6 +60,10 @@ spring:
         show-sql: true
     profiles:
         active: prod
+    cloud:
+        kubernetes:
+            discovery:
+                all-namespaces: true
 resilience4j.ratelimiter:
     configs:
         default:
